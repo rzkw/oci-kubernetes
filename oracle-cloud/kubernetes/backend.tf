@@ -1,9 +1,9 @@
 terraform {
   cloud {
-    organization = "homelab"
+    organization = "walkable"
 
     workspaces {
-      name = "oracle-cloud-kubernetes"
+      name = "oci-kubernetes"
     }
   }
 }

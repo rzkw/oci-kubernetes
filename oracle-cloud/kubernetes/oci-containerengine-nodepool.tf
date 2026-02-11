@@ -36,7 +36,7 @@ resource "oci_containerengine_node_pool" "main" {
     source_type = "IMAGE"
     image_id = try(([for s in data.oci_containerengine_node_pool_option.node_pool_options.sources : s.image_id if
       strcontains(s.source_name, "aarch64") &&
-      strcontains(s.source_name, "Oracle-Linux") &&
+      strcontains(s.source_name, "Ubuntu") &&
       !strcontains(s.source_name, "GPU") &&
       strcontains(s.source_name, "OKE-${trimprefix(oci_containerengine_cluster.main.kubernetes_version, "v")}")
     ])[0], null)
